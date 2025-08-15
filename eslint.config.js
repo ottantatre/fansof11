@@ -12,15 +12,22 @@ export default [
   // Ogólne reguły JS
   js.configs.recommended,
 
-  // ===== App (src) - TypeScript + React + Hooks + typed lint =====
+  // ===== App (src) — TypeScript + React + Hooks + typed lint =====
   {
     files: ['src/**/*.{ts,tsx}'],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: ['./tsconfig.app.json'], // <-- ważne: tylko app
+        project: ['./tsconfig.app.json'], // <- tylko app
         tsconfigRootDir: import.meta.dirname,
         ecmaFeatures: { jsx: true },
+      },
+      // środowisko przeglądarkowe (żeby nie było no-undef na document/window)
+      globals: {
+        window: 'readonly',
+        document: 'readonly',
+        navigator: 'readonly',
+        console: 'readonly',
       },
     },
     plugins: {
@@ -30,7 +37,7 @@ export default [
       prettier: prettierPlugin,
     },
     rules: {
-      // TS (typed) – bazujemy na recommendedTypeChecked
+      // TS (typed)
       ...tseslint.configs.recommendedTypeChecked[0].rules,
 
       // React + Hooks
@@ -44,21 +51,23 @@ export default [
     settings: { react: { version: 'detect' } },
   },
 
-  // ===== Pliki Node/konfigi (vite.config.ts, skrypty) - typed lint =====
+  // ===== Pliki Node / konfiguracje — typed lint =====
   {
     files: ['vite.config.ts', 'vitest.config.ts', 'scripts/**/*.ts', '*.config.ts'],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: ['./tsconfig.node.json'], // <-- ważne: tylko node/config
+        project: ['./tsconfig.node.json'], // <- tylko node/config
         tsconfigRootDir: import.meta.dirname,
       },
-      // Node globals (żeby nie było no-undef na __dirname / process)
+      // globalne zmienne Node (żeby nie było no-undef na __dirname / process)
       globals: {
         __dirname: 'readonly',
+        __filename: 'readonly',
         process: 'readonly',
         module: 'readonly',
         require: 'readonly',
+        console: 'readonly',
       },
     },
     plugins: {
@@ -71,7 +80,7 @@ export default [
     },
   },
 
-  // ===== Globalne ustawienia Prettiera (styl) =====
+  // ===== Wspólne ustawienia Prettiera (styl) =====
   {
     plugins: { prettier: prettierPlugin },
     rules: {
