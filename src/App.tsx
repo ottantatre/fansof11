@@ -1,12 +1,11 @@
-import { Button } from '@/components/ui/button';
 import './App.css';
+import { Outlet } from 'react-router-dom';
 
-function App() {
+export function App() {
   return (
-    <div className="flex min-h-svh items-center justify-center">
-      <Button>Click me</Button>
+    <div className="min-h-screen bg-background text-foreground">
+      {/* miejsce na navbar, footer, sidebar itd. */}
+      <Outlet />
     </div>
   );
 }
-
-export default App;

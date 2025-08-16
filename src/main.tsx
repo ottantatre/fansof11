@@ -7,10 +7,10 @@ import '@fontsource/inter-tight/600.css';
 import '@fontsource/inter-tight/700.css';
 import './index.css';
 
-import App from './App';
+import { AppRouter } from './router';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <AppRouter />
   </StrictMode>,
 );
