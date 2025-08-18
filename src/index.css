@@ -5,10 +5,12 @@
   --color-background: var(--color-slate-100);
   --color-foreground: var(--color-slate-800);
   --spacing-nav-header: var(--nav-height);
+  --spacing-main: var(--main-height);
 }
 
 :root {
   --nav-height: 4rem;
+  --main-height: calc(100vh - var(--nav-height));
 }
 
 @layer base {

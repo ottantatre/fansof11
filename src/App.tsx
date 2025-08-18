@@ -6,7 +6,9 @@ export function App() {
   return (
     <div className="flex flex-col">
       <Nav />
-      <Outlet />
+      <main className="h-main overflow-y-auto">
+        <Outlet />
+      </main>
     </div>
   );
 }
