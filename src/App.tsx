@@ -4,7 +4,7 @@ import Nav from './components/Nav';
 
 export function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="flex flex-col">
       <Nav />
       <Outlet />
     </div>
