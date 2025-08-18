@@ -1,7 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { App } from './App';
-import { HomePage } from '@pages/HomePage';
-import { AboutPage } from '@pages/AboutPage';
+import { HomePage } from '@pages/Home';
+import { LoginPage } from '@pages/Login';
+import { NotFoundPage } from '@pages/NotFound';
 
 // Definicja tras
 const router = createBrowserRouter([
@@ -10,7 +11,11 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: 'about', element: <AboutPage /> },
+      { path: 'login', element: <LoginPage /> },
+      {
+        path: '*',
+        element: <NotFoundPage />,
+      },
     ],
   },
 ]);
