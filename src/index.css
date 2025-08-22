@@ -2,10 +2,12 @@
 @import 'tw-animate-css';
 
 @theme {
-  --color-background: var(--color-slate-100);
+  --color-background: var(--color-slate-200);
   --color-foreground: var(--color-slate-800);
+  --color-nav-background: var(--color-slate-100);
   --spacing-nav-header: var(--nav-height);
   --spacing-main: var(--main-height);
+  --font-mono: 'Inconsolata', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
 }
 
 :root {
@@ -17,5 +19,8 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter Tight', sans-serif;
+  }
+  .mono {
+    fotn-family: 'Inconsolata';
   }
 }

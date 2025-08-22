@@ -39,6 +39,7 @@ export default [
     rules: {
       // TS (typed)
       ...tseslint.configs.recommendedTypeChecked[0].rules,
+      'no-unused-vars': 'warn',
 
       // React + Hooks
       ...react.configs.recommended.rules,
@@ -89,7 +90,7 @@ export default [
         {
           singleQuote: true,
           semi: true,
-          printWidth: 100,
+          printWidth: 140,
           tabWidth: 2,
           trailingComma: 'all',
         },

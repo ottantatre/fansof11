@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
+import { LiveScore } from '@/components/LiveScore';
+import dayjs from 'dayjs';
 
 type Fixture = {
   id: number;
@@ -32,57 +34,24 @@ export function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <main className="max-w-5xl mx-auto p-6">
-        <section className="mb-8">
-          <h1 className="text-3xl font-bold">Witaj w Fansof11</h1>
-          <p className="mt-2 text-gray-600 dark:text-gray-300">
-            Zaloguj się, wybierz swoje ligi, drużyny i zawodników, a my pokażemy Ci live wyniki i
-            aktualizacje.
-          </p>
-          <div className="mt-4 flex gap-3">
-            <a href="/login" className="px-4 py-2 rounded bg-black text-white">
-              Zaloguj
-            </a>
-            <a href="#how" className="px-4 py-2 rounded border">
-              Jak to działa?
-            </a>
-          </div>
-        </section>
-
-        <section className="mb-10" id="how">
-          <h2 className="text-xl font-semibold">Co dalej?</h2>
-          <ol className="list-decimal pl-6 mt-2 space-y-1">
-            <li>Zaloguj się (niebawem — magic link).</li>
-            <li>Wybierz ulubione ligi / drużyny / zawodników.</li>
-            <li>Otrzymuj odświeżane wyniki i wydarzenia.</li>
-          </ol>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold">Ostatnio zaktualizowane wyniki</h2>
-          {loading && <p className="mt-3">Ładowanie…</p>}
-          {error && <p className="mt-3 text-red-600">{error}</p>}
-          {!loading && !error && (
-            <ul className="mt-4 grid gap-2">
-              {fixtures.map((f) => (
-                <li key={f.id} className="border rounded p-3 flex items-center justify-between">
-                  <div>
-                    <div className="font-medium">
-                      {f.home_team} vs {f.away_team}
-                    </div>
-                    <div className="text-sm opacity-70">{new Date(f.date).toLocaleString()}</div>
-                  </div>
-                  <div className="text-lg font-semibold">
-                    {f.status === 'FT' ? `${f.home_score ?? 0} : ${f.away_score ?? 0}` : f.status}
-                  </div>
-                </li>
-              ))}
-              {fixtures.length === 0 && <li className="opacity-70">Brak danych</li>}
-            </ul>
-          )}
-        </section>
-      </main>
+    <div className="w-100">
+      <p>Livescores</p>
+      <ul>
+        <li>
+          <LiveScore
+            teamA="Inter"
+            teamB="Juventus"
+            resultTeamA={3}
+            resultTeamB={1}
+            startTime={dayjs('2025-08-19T18:30:00.0000Z')}
+            actualTimeString="44'"
+            displayDirection="column"
+          />
+        </li>
+        <li>
+          <LiveScore teamA="Arsenal" teamB="Manchester" startTime={dayjs('2025-08-19T21:30:00.000Z')} />
+        </li>
+      </ul>
     </div>
   );
 }
