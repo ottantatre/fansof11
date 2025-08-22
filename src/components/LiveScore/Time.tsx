@@ -15,13 +15,11 @@ export function Time(props: TimeProps) {
   const startHour = useMemo(() => startTime.format('HH:mm'), [startTime]);
   const isToday = useMemo(() => startTime.isToday(), [startTime]);
 
-  console.log('Time', startTime, displayDirection, isToday);
-
   const dateClass = useMemo(() => (displayDirection === 'column' ? '' : isToday ? 'hidden' : ''), [displayDirection, isToday]);
   const hourClass = useMemo(() => (displayDirection === 'column' ? '' : isToday ? '' : 'hidden'), [displayDirection, isToday]);
 
   return (
-    <div className="flex flex-col items-center justify-center w-12 text-xs">
+    <div className="flex flex-col items-center justify-center w-12 text-xs gap-y-1">
       {actualTimeString ? (
         <span>{actualTimeString}</span>
       ) : (
