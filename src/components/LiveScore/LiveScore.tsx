@@ -1,37 +1,29 @@
 import { Dayjs } from 'dayjs';
-import { useMemo } from 'react';
 import { Result } from './Result';
 import { Teams } from './Teams';
 import type { DisplayDirection } from './types';
+import { Time } from './Time';
 
 interface LivescoreProps {
-  teamA: string;
-  teamB: string;
+  teams: [string, string];
   startTime: Dayjs;
-  resultTeamA?: number;
-  resultTeamB?: number;
   actualTimeString?: string;
   displayDirection?: DisplayDirection;
+  results?: [number, number];
 }
 
 export function LiveScore(props: LivescoreProps) {
-  const { teamA, teamB, resultTeamA = 0, resultTeamB = 0, startTime, actualTimeString, displayDirection } = props;
-
-  const startData = useMemo(() => startTime.format('DD.MM'), [startTime]);
-  const startHour = useMemo(() => startTime.format('HH:MM'), [startTime]);
+  const {
+    teams: [teamA, teamB],
+    results: [resultTeamA, resultTeamB] = [0, 0],
+    startTime,
+    actualTimeString,
+    displayDirection,
+  } = props;
 
   return (
     <div className="flex w-full justify-between">
-      <div className="flex flex-col items-center justify-center w-12 text-xs">
-        {actualTimeString ? (
-          <span>{actualTimeString}</span>
-        ) : (
-          <>
-            <span>{startData}</span>
-            <span>{startHour}</span>
-          </>
-        )}
-      </div>
+      <Time actualTimeString={actualTimeString} startTime={startTime} displayDirection={displayDirection} />
 
       <div className="w-full flex items-center justify-between relative">
         <Teams

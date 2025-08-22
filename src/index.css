@@ -7,7 +7,7 @@
   --color-nav-background: var(--color-slate-100);
   --spacing-nav-header: var(--nav-height);
   --spacing-main: var(--main-height);
-  --font-mono: 'Inconsolata', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  --font-mono: 'Source Code Pro', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
 }
 
 :root {
@@ -19,8 +19,5 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter Tight', sans-serif;
-  }
-  .mono {
-    fotn-family: 'Inconsolata';
   }
 }

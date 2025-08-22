@@ -39,17 +39,27 @@ export function HomePage() {
       <ul>
         <li>
           <LiveScore
-            teamA="Inter"
-            teamB="Juventus"
-            resultTeamA={3}
-            resultTeamB={1}
+            teams={['Inter', 'Juventus']}
+            results={[3, 1]}
             startTime={dayjs('2025-08-19T18:30:00.0000Z')}
             actualTimeString="44'"
             displayDirection="column"
           />
         </li>
         <li>
-          <LiveScore teamA="Arsenal" teamB="Manchester" startTime={dayjs('2025-08-19T21:30:00.000Z')} />
+          <LiveScore teams={['Barcelona', 'Real']} startTime={dayjs().set('hour', 20).set('minute', 45)} displayDirection="column" />
+        </li>
+        <li>
+          <LiveScore teams={['Arka', 'Lechia']} startTime={dayjs('2025-08-21T19:15:00.000Z')} displayDirection="column" />
+        </li>
+        <li>
+          <LiveScore teams={['Arsenal', 'Manchester']} startTime={dayjs('2025-08-22T21:30:00.000Z')} />
+        </li>
+        <li>
+          <LiveScore teams={['PSG', 'Monaco']} startTime={dayjs('2025-08-21T21:30:00.000Z')} />
+        </li>
+        <li>
+          <LiveScore teams={['Bayern', 'Lepzig']} startTime={dayjs('2025-08-19T21:30:00.000Z')} actualTimeString="119'ET" />
         </li>
       </ul>
     </div>
