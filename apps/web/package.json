@@ -1,0 +1,12 @@
+{
+  "name": "@apps/web",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo \"web build\"",
+    "dev": "echo \"web dev\"",
+    "lint": "eslint . --ext .ts,.tsx",
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}
