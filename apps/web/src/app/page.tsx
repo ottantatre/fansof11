@@ -1,15 +1,20 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 
 export default function Home() {
   return (
     <main className="min-h-dvh flex items-center justify-center">
-      <div className="p-6 rounded-xl border shadow-sm">
-        <h1 className="text-2xl font-bold mb-2">Next + Tailwind v4 ✅</h1>
-        <p className="opacity-80">
-          Jeśli widzisz spacing/border/typografię — działa.
-        </p>
-      </div>
+      <Card className="w-[520px]">
+        <CardContent className="p-6 space-y-4">
+          <h1 className="text-2xl font-bold">UI działa ✅</h1>
+          <p className="opacity-80">shadcn/ui + Tailwind v4.</p>
+          <div className="flex gap-3">
+            <Button>Primary</Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="link">Link</Button>
+          </div>
+        </CardContent>
+      </Card>
     </main>
   );
 }
