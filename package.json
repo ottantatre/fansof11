@@ -39,5 +39,10 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json,md,css}": "prettier -w"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13"
   }
 }
