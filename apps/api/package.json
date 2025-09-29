@@ -1,0 +1,27 @@
+{
+  "name": "@apps/api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx src/dev.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/src/dev.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "private": "true",
+  "devDependencies": {
+    "@types/node": "^20.19.17",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.5",
+    "dotenv": "^17.2.2",
+    "hono": "^4.9.9",
+    "zod": "^4.1.11"
+  }
+}
