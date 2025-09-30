@@ -22,13 +22,17 @@
     "dev": "npm run -ws dev",
     "lint": "npm run -ws lint",
     "format": "prettier -w .",
-    "typecheck": "npm run -ws typecheck"
+    "typecheck": "npm run -ws typecheck",
+    "db:generate": "drizzle-kit generate --config=drizzle.config.ts",
+    "db:push": "drizzle-kit push --config=drizzle.config.ts",
+    "db:studio": "drizzle-kit studio --config=drizzle.config.ts"
   },
   "engines": {
     "node": ">=20.10.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
+    "drizzle-kit": "^0.31.5",
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
