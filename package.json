@@ -40,7 +40,7 @@
     "prettier": "^3.6.2",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.44.1"
+    "typescript-eslint": "^8.45.0"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json,md,css}": "prettier -w"

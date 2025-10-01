@@ -8,6 +8,13 @@
       "when": 1759173252918,
       "tag": "0000_breezy_fixer",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1759265746898,
+      "tag": "0001_windy_wildside",
+      "breakpoints": true
     }
   ]
 }
